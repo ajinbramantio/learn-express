@@ -22,9 +22,13 @@ yarn dev
 
 ## REST API Endpoints
 
-- GET `/`: Hello
-- GET `/users`: List of users
-- POST `/users`: Create new user
-- DELETE `/users`: Delete all users
-- DELETE `/users/:id`: Delete one user by id
-- PUT `/users/:id`: Update one user by id
+## REST API Endpoints
+
+| Endpoint     | Method | Description           |
+| ------------ | ------ | --------------------- |
+| `/`          | GET    | Hello                 |
+| `/users`     | GET    | List of Users         |
+| `/users`     | POST   | Create new user       |
+| `/users`     | DELETE | Delete all users      |
+| `/users/:id` | DELETE | Delete one user by id |
+| `/users/:id` | PUT    | Update one user by id |
