@@ -22,8 +22,6 @@ yarn dev
 
 ## REST API Endpoints
 
-## REST API Endpoints
-
 | Endpoint     | Method | Description           |
 | ------------ | ------ | --------------------- |
 | `/`          | GET    | Hello                 |
