@@ -30,7 +30,6 @@ app.get('/users', (req, res) => {
 })
 
 app.post('/users', (req, res) => {
-  console.log(req.body.name)
   if (req.body.name) {
     const newUser = {
       id: nexId,
@@ -46,7 +45,8 @@ app.post('/users', (req, res) => {
     })
   } else {
     res.send({
-      error: 'error bro'
+      error: 'Failed to create new user',
+      message: 'name is not defined in body'
     })
   }
 })
@@ -75,7 +75,7 @@ app.put('/users/:id', (req, res) => {
 
   const newName = req.body.name
 
-  users.map(user => {
+  const newUsers = users.map(user => {
     if (user.id === id) {
       user.name = newName
       return user
@@ -84,10 +84,13 @@ app.put('/users/:id', (req, res) => {
     }
   })
 
+  users = newUsers
+
   res.send({
     message: 'One user has been updated',
     id: id,
     newName: newName
   })
 })
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
